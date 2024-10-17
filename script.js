@@ -17,14 +17,21 @@ button.addEventListener('click',()=>{
         output.innerText = "Please enter a number less than or equal to 3999";
     }
     else{
-        romanConverter(num,);
+        output.innerText = romanConverter(num);
     }
 } )
 
 
 function romanConverter(num){
+    console.log('bai')
     const romanObj ={'M':1000,'CM':900,'D':500,'CD':400,'C':100,'XC':90,'L':50,'XL':40,'X':10,'IX':9,'V':5,'IV':4,'I':1};
-    for (var key in romanObj){
+    let roman ='';
+    for (const key in romanObj){
+        while (num - romanObj[key] >= 0){
+            num-= romanObj[key];
+            roman += key;
+        }
         
     }
+    return roman
 }
